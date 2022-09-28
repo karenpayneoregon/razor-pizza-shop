@@ -1,0 +1,53 @@
+﻿@page
+@model PizzaShop.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h1>Orders</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="table-responsive-lg">
+    <table class="table">
+        <thead class="table-danger">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderPlaced)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderFulfilled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Customer)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Order)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderPlaced)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderFulfilled)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.LastName)
+                </td>
+                <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> &nbsp;
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> &nbsp;
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>

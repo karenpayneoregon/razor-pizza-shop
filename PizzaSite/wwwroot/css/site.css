@@ -1,0 +1,61 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+
+.footer {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background: white;
+    position: fixed;
+    bottom: 0%;
+    margin-top: 50%;
+    color: #009900 !important;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+h1 {
+    font-size: 32px;
+    text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #090;
+    padding: 16px;
+    font-weight: lighter;
+    -moz-box-shadow: 2px 2px 6px #888;
+    -webkit-box-shadow: 2px 2px 6px #888;
+    box-shadow: 2px 2px 6px #888;
+    text-align: center;
+    display: block;
+    margin: 16px;
+    background-image: url(../lib/images/home.jpg);
+}

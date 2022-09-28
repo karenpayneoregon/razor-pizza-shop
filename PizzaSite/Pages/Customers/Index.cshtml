@@ -1,0 +1,84 @@
+﻿@page
+@model PizzaShop.Pages.Customers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*
+    This is how to get CSS Isolation to work
+    Add a new file named `basePageName`.cshtml.css
+    Add the link (as per below) specifying the project namespace
+*@
+<link rel="stylesheet" href="~/@(nameof(PizzaShop)).styles.css" />
+
+
+<h1>Index</h1>
+
+<h6 class="spread2">I have an isolated style sheet</h6>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="table-responsive-lg">
+    <table class="table table-bordered">
+        <thead class="table-danger">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].Email)
+                </th>
+                <th>
+                    Total Orders
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Customer)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @item.Orders.Count
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a> &nbsp;
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Details</a> &nbsp;
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-page="../Index" class="btn btn-primary">Home</a>
+</div>
