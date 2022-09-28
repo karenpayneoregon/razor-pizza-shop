@@ -39,6 +39,15 @@ namespace PizzaShop.Data
                 optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString());
             }
 
+            // If there are sporadic timeouts use the following
+            //optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString(), options =>
+            //{
+            //    options.EnableRetryOnFailure(
+            //        maxRetryCount: 3,
+            //        maxRetryDelay: TimeSpan.FromSeconds(10),
+            //        errorNumbersToAdd: new List<int> { 4060 }); //additional error codes to treat as transient
+            //});
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

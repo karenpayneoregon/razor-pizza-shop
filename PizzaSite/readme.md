@@ -9,7 +9,6 @@ Functionality is broken up as follows
 ## wwwroot
 
 CSS, JavaScript libraries
-
 ## Pages/Shared
 
 Site wide configuration
@@ -80,6 +79,45 @@ Enclose code blocks in braces. A code block includes one or more code statements
 <p>Today's weather: @weatherMessage</p>
 ```
 
+# Tag Helpers
+
+Tag Helpers enable server-side code to participate in creating and rendering HTML elements in Razor files. 
+
+Most built-in Tag Helpers target standard HTML elements and provide server-side attributes for the element. For example, the `<input>` element used in many views in the Views/Account folder contains the asp-for attribute. This attribute extracts the name of the specified model property into the rendered HTML. Consider a Razor view with the following
+
+
+```csharp
+public class Movie
+{
+    public int ID { get; set; }
+    public string Title { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public string Genre { get; set; }
+    public decimal Price { get; set; }
+}
+```
+
+The following Razor markup:
+
+```html
+<label asp-for="Movie.Title"></label>
+```
+
+Generates the following HTML:
+
+```html
+<label for="Movie_Title">Title</label>
+```
+
+## Tag Helpers in forms
+
+See the [following](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-6.0)
+
+## built in tag helpers
+
+See the [following](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper?view=aspnetcore-6.0)
+
+
 # Entity Framework Core
 
 - DbContext (under the `Data` folder)
@@ -140,10 +178,15 @@ public static async Task UpdateName(Customer currentCustomer)
 
 # Resources
 
+- [Host](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-6.0) ASP.NET Core on Windows with IIS
+- [Globalization](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-6.0) and localization in ASP.NET Core
 - Razor [syntax reference](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0) for ASP.NET Core
+- Security [topics](https://learn.microsoft.com/en-us/aspnet/core/security/?view=aspnetcore-6.0)
+- [Globalization and Internationalization](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-globalization-internationalization/table-of-contents) in ASP.NET Core 6 (Pluralsight)
 - ASP.NET Razor - [C# Code Syntax](https://gist.github.com/jwill9999/655533b6652418bd3bc94d864a5e2b49) 
 - ASP.NET - [Razor Syntax Cheat](https://www.snippset.com/asp-net-razor-syntax-cheat-sheet-s586) sheet
 - Dependency Injection in ASP.NET Core 6 [Course](https://app.pluralsight.com/library/courses/dependency-injection-asp-dot-net-core-6/table-of-contents)
+- [FluentEmail](https://github.com/lukencode/FluentEmail) - All in one email sender for .NET and .NET Core
 - Concurrency conflicts
     - [Microsoft](https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/concurrency?view=aspnetcore-6.0&tabs=visual-studio)
     - Karen Payne working [example](https://github.com/karenpayneoregon/ef-core-6-tips/tree/master/TaxpayersConcurrencyCheck) done in a console project using [[ConcurrencyCheck](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=net-6.0)]
