@@ -34,29 +34,38 @@ namespace PizzaShop.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!_create) return;
-            //if (!optionsBuilder.IsConfigured)
-            //{
-            //    optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString());
-            //}
 
-            // If there are sporadic timeouts use the following
-            //optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString(), options =>
-            //{
-            //    options.EnableRetryOnFailure(
-            //        maxRetryCount: 3,
-            //        maxRetryDelay: TimeSpan.FromSeconds(10),
-            //        errorNumbersToAdd: new List<int> { 4060 }); //additional error codes to treat as transient
-            //});
+            //DefaultConnection(optionsBuilder);
+            DefaultEnableRetryOnFailureConnection(optionsBuilder);
 
-
-            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString(), builder =>
-            {
-                builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
-            });
             base.OnConfiguring(optionsBuilder);
 
         }
 
+        #region Connection options
+        public static void DefaultConnection(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString());
+        }
+        public static void DefaultEnableRetryOnFailureConnection(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString(), builder =>
+            {
+                builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+            });
+        }
+        public static void DefaultEnableRetryOnFailureConnection1(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString(), options =>
+            {
+                options.EnableRetryOnFailure(
+                    maxRetryCount: 3,
+                    maxRetryDelay: TimeSpan.FromSeconds(10),
+                    errorNumbersToAdd: new List<int> { 4060 }); //additional error codes to treat as transient
+            });
+
+        } 
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             OnModelCreatingPartial(modelBuilder);
