@@ -124,6 +124,9 @@ When running the application, I have setup that EF Core statements are shown in 
 :bulb: We can tag EF Core statements with [TagWith](https://learn.microsoft.com/en-us/ef/core/querying/tags) and [TagWithCallSite](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.tagwithcallsite?view=efcore-6.0).
 
 
+> **Note**
+> Example of what EF Core produces under the covers when executing, in this case a SELECT statement.
+
 ```sql
 SELECT [o].[Id], [o].[CustomerId], [o].[OrderFulfilled], [o].[OrderPlaced], [c].[Id], [c].[Address], [c].[Email], [c].[FirstName], [c].[LastName], [c].[Phone]
 FROM [Orders] AS [o]
