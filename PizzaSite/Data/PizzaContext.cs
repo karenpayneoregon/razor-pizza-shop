@@ -34,10 +34,10 @@ namespace PizzaShop.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!_create) return;
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString());
-            }
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString());
+            //}
 
             // If there are sporadic timeouts use the following
             //optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString(), options =>
@@ -47,6 +47,13 @@ namespace PizzaShop.Data
             //        maxRetryDelay: TimeSpan.FromSeconds(10),
             //        errorNumbersToAdd: new List<int> { 4060 }); //additional error codes to treat as transient
             //});
+
+
+            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString(), builder =>
+            {
+                builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+            });
+            base.OnConfiguring(optionsBuilder);
 
         }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using PizzaShop.Data;
 using System.Net;
 
@@ -24,8 +25,10 @@ namespace PizzaShop.Pages
         {
 
             var httpClient = new HttpClient();
-            var ip = await httpClient.GetStringAsync("https://api.ipify.org");
-            IpAddress = ip;
+            var ipAddress = await httpClient.GetStringAsync("https://api.ipify.org");
+            IpAddress = ipAddress;
+
+            var remoteIpAddress = HttpContext.Features.Get<IHttpConnectionFeature>()?.RemoteIpAddress;
         }
     }
 }

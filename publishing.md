@@ -1,4 +1,7 @@
-﻿[![](assets/home-ec.png)](readme.md) Main page
+﻿IIS: [Configure Data Source Settings](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/configuring-step-3-configure-data-source-settings)
+
+
+[![](assets/home-ec.png)](readme.md) Main page
 
 # Run from PowerShell
 
