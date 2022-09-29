@@ -1,4 +1,6 @@
-﻿# Run from PowerShell
+﻿[![](assets/home-ec.png)](readme.md) Main page
+
+# Run from PowerShell
 
 1. Traverse to publish folder
 1. Type in `dotnet .\PizzaShop.dll`
@@ -27,3 +29,5 @@ https://www.learnrazorpages.com/publishing/publish-to-iis
 Four Reasons Why Your ASP.NET Core Application is Not Working in IIS
 
 https://www.roundthecode.com/dotnet/asp-net-core-web-hosting/four-reasons-why-your-asp-net-core-application-is-not-working-in-iis
+
+[![](assets/home-ec.png)](readme.md) Main page
