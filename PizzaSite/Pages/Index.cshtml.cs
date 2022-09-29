@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using PizzaShop.Data;
+using System.Net;
 
 namespace PizzaShop.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public string IpAddress;
 
         public IndexModel(ILogger<IndexModel> logger, PizzaContext context)
         {
@@ -18,9 +20,12 @@ namespace PizzaShop.Pages
             _ = context.Customers.Count();
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
 
+            var httpClient = new HttpClient();
+            var ip = await httpClient.GetStringAsync("https://api.ipify.org");
+            IpAddress = ip;
         }
     }
 }

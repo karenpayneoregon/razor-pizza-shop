@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     @* Visual Studio can not find the file but it exists outside of the project *@
-    <link rel="stylesheet" href="~/ContosoPizza.styles.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/ContosoPizza.styles.css" asp-append-version="true" />*@
 </head>
 <body>
     <header>
@@ -47,16 +47,9 @@
         </main>
     </div>
 
-
-    @*<footer class="border-top footer text-muted">
-    <div class="container">
-    &copy; 2022 - OED Pizza - <a asp-area="" asp-page="/Privacy">Privacy</a>
-    </div>
-    </footer>*@
-
     <footer class="border-top footer">
-        <div class="container">
-            &copy; 2022 KP
+        <div id="footMain" class="container" style="font-size: x-small;">
+            &copy; 2022 
         </div>
     </footer>
 
@@ -65,5 +58,12 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script language="jscript">
+        $.getJSON('https://json.geoiplookup.io/?callback=?', function (data) {
+            //console.log(JSON.stringify(data.ip, null, 2));
+            $("#footMain").append(' [ip: ' + data.ip + ']');
+        });
+    </script>
 </body>
 </html>
