@@ -123,6 +123,12 @@ INNER JOIN [Customers] AS [c] ON [o].[CustomerId] = [c].[Id]
 ORDER BY [o].[OrderPlaced]
 ```
 
+# Publishing
+
+:bulb: See the following [page](publishing.md) for running from publish folder via PowerShell.
+
+Currently have not successfully figured out how to properly publish to `IIS`
+
 
 
 [^1]: CSS isolation means creating a CSS file like '.cshtml.css' for each razor page/view(.cshtml). CSS isolation helps to avoid dependencies on global styles that will be very hard to maintain and also avoid style conflicts among the nested content.

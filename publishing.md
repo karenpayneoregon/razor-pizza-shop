@@ -4,7 +4,7 @@
 1. Type in `dotnet .\PizzaShop.dll`
 1. Type in `https://localhost:5001` (or which ever address is given)
 
-![Run](../assets/run.png)
+![x](assets/run.png)
 
 # Profile location
 
