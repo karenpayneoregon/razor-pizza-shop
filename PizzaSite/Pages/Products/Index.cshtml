@@ -8,10 +8,12 @@
 <h1>Products</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
-    <thead>
+
+<div class="table-responsive-lg">
+    <table class="table table-bordered">
+        <thead class="table-danger">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Product[0].Name)
@@ -21,8 +23,8 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         @foreach (var item in Model.Product)
         {
             <tr>
@@ -39,7 +41,8 @@
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
-<a asp-page="../Index" class="btn btn-primary">Home</a>
+    <a asp-page="../Index" class="btn btn-primary">Home</a>
+</div>

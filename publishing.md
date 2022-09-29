@@ -13,7 +13,7 @@
 IIS: [Configure Data Source Settings](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/configuring-step-3-configure-data-source-settings)
 
 
-
+[Generate Links To ASP.NET Core Map Endpoints](https://khalidabuhakmeh.com/generate-links-to-aspnet-core-map-endpoints)
 
 # Run from PowerShell
 
