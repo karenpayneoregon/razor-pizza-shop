@@ -16,8 +16,9 @@ class Program
         builder.Services.AddDbContext<PizzaContext>(options =>
             options.UseSqlServer(ConfigurationHelper.ConnectionString()));
 
+        
         WebApplication app = builder.Build();
-
+        
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
