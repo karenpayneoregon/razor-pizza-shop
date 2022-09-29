@@ -6,6 +6,16 @@
 
 ![Run](../assets/run.png)
 
+# Profile location
+
+Note the red icon  :no_entry:, this indicates the profile will not be commited to the GitHub repository.
+
+![x](assets/whereAreProfiles.png)
+
+# Publish sample profile
+
+![x](assets/pubSettings.png)
+
 # Resources
 
 https://jakeydocs.readthedocs.io/en/latest/publishing/iis.html
