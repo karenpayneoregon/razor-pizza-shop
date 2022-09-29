@@ -4,6 +4,9 @@ This repository provides a glimpses into the basics for building an ASP.NET Core
 
 The main app is <kbd>PizzaShop</kbd>, other projects are secondary.
 
+> **Note**
+> None of the projects are setup for IIS. For details, see IIS.docx
+
 # Razor Pages
 
 Razor Pages is a newer, simplified web application programming model. It removes much of the ceremony of ASP.NET MVC by adopting a `file-based routing approach`. Each Razor Pages file found under the `Pages` directory equates to an `endpoint`. Razor Pages have an associated C# objected called the page model, which holds each page's behavior. Additionally, each page works on the limited semantics of HTML, only supporting GET and POST methods.
