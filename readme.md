@@ -138,7 +138,7 @@ ORDER BY [o].[OrderPlaced]
 
 :bulb: See the following [page](publishing.md) for running from publish folder via PowerShell.
 
-Currently have not successfully figured out how to properly publish to `IIS`
+~~Currently have not successfully figured out how to properly publish to `IIS`~~
 
 
 
