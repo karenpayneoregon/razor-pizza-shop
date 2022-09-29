@@ -1,4 +1,6 @@
-﻿- [Planning Step 1](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/planning-step-1-plan-iis-web-server-and-asp-net-modules-installation): Plan IIS Web Server and ASP.NET Modules Installation
+﻿[![](assets/home-ec.png)](readme.md) Main page
+
+- [Planning Step 1](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/planning-step-1-plan-iis-web-server-and-asp-net-modules-installation): Plan IIS Web Server and ASP.NET Modules Installation
 - [Planning Step 2](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/planning-step-2-plan-asp-net-settings): Plan ASP.NET Settings
 - [Planning Step 3](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/planning-step-3-plan-data-source-settings): Plan Data Source Settings
 - [Planning Step 4](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/planning-step-4-plan-application-security): Plan Application Security
@@ -11,7 +13,7 @@
 IIS: [Configure Data Source Settings](https://learn.microsoft.com/en-us/iis/application-frameworks/scenario-build-an-aspnet-website-on-iis/configuring-step-3-configure-data-source-settings)
 
 
-[![](assets/home-ec.png)](readme.md) Main page
+
 
 # Run from PowerShell
 
