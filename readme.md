@@ -38,6 +38,9 @@ The model classes are known as POCO classes (from "Plain-Old CLR Objects") becau
 
 # Setting up the database
 
+> **Note**
+> This may fail for some developers dependent on how Windows permissions have been setup.
+
 :point_right: With this solution open, from Visual Studio menu, select `PizzaShop Debug Properties` (use the small down arrow button)
 
 ![Figure1](assets/figure1.png)
