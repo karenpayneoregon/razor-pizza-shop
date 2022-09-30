@@ -10,7 +10,15 @@ class Program
 {
     public static async Task Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        // simple
+        //var builder = WebApplication.CreateBuilder(args);
+
+        // verbose
+        var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+        {
+            ApplicationName = typeof(Program).Assembly.FullName,
+            ContentRootPath = Directory.GetCurrentDirectory()
+        });
 
         // Add services to the container.
         builder.Services.AddRazorPages();

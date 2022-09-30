@@ -2,9 +2,16 @@
 
 This is a basic ASP.NET Core [^1] project using Razor Pages [^2] using Entity Framework Core 6 [^3] using Microsoft SQL-Server database.
 
+
+
+
 # Project structure
 
 Functionality is broken up as follows
+
+## Startup
+
+Prior to .NET Core 6, the startup comprised of two files, `Startup.cs` and `Program.cs`. .NET 6 introduces a new hosting model for ASP.NET Core applications. This model is streamlined and reduces the amount of boilerplate code required to get a basic ASP.NET Core application up and running.
 
 ## wwwroot
 
