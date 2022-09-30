@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +7,9 @@ using PizzaShop.Models;
 
 namespace PizzaShop.Pages.Orders
 {
+    /// <summary>
+    /// TODO List items in an order
+    /// </summary>
     public class EditModel : PageModel
     {
         private readonly PizzaContext _context;
@@ -30,20 +29,20 @@ namespace PizzaShop.Pages.Orders
                 return NotFound();
             }
 
-            var order =  await _context.Orders.FirstOrDefaultAsync(m => m.Id == id);
+            var order = await _context.Orders.FirstOrDefaultAsync(m => m.Id == id);
+
             if (order == null)
             {
                 return NotFound();
             }
+
             Order = order;
-           ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id");
+
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id");
+
             return Page();
         }
 
-        /// <summary>
-        /// TODO finished save
-        /// </summary>
-        /// <returns></returns>
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -72,9 +71,6 @@ namespace PizzaShop.Pages.Orders
             return RedirectToPage("./Index");
         }
 
-        private bool OrderExists(int id)
-        {
-          return _context.Orders.Any(e => e.Id == id);
-        }
+        private bool OrderExists(int id) => _context.Orders.Any(e => e.Id == id);
     }
 }

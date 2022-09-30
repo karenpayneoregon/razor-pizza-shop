@@ -13,7 +13,7 @@
 
 <div class="table-responsive-lg">
     <table class="table table-bordered">
-        <thead class="table-danger">
+        <thead class="table-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Product[0].Name)
@@ -25,22 +25,24 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model.Product)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> &nbsp;
-                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> &nbsp;
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
-                </td>
-            </tr>
-        }
+
+            @foreach (var item in Model.Product)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> &nbsp;
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> &nbsp;
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+
         </tbody>
     </table>
 

@@ -10,44 +10,51 @@
 <h4>Order</h4>
 <hr />
 <div class="row">
+
     <div class="col-md-4">
+
         <form method="post">
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Order.Id" />
+            <input type="hidden" asp-for="Order.Id"/>
+
             <div class="form-group">
                 <label asp-for="Order.OrderPlaced" class="control-label"></label>
-                <input asp-for="Order.OrderPlaced" class="form-control" />
+                <input asp-for="Order.OrderPlaced" class="form-control"/>
                 <span asp-validation-for="Order.OrderPlaced" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Order.OrderFulfilled" class="control-label"></label>
-                <input asp-for="Order.OrderFulfilled" class="form-control" />
-                <span asp-validation-for="Order.OrderFulfilled" class="text-danger"></span>
-            </div>
-            
-            <div class="form-group">
-                <label asp-for="Order.CustomerId" class="control-label"></label>
-                <select asp-for="Order.CustomerId" class="form-control" asp-items="ViewBag.CustomerId" ReadOnly="true"></select>
-                <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
-            </div>
-            
-            <div class="form-group">
-                <label asp-for="Order.Customer.FirstName" class="control-label"></label>
-                <input asp-for="Order.Customer.FirstName" class="form-control" />
-                <span asp-validation-for="Order.Customer.FirstName" class="text-danger"></span>
-            </div>
-            
-            <div class="form-group">
-                <label asp-for="Order.Customer.LastName" class="control-label"></label>
-                <input asp-for="Order.Customer.LastName" class="form-control" />
-                <span asp-validation-for="Order.Customer.LastName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" /> <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+                <label asp-for="Order.OrderFulfilled" class="control-label"></label>
+                <input asp-for="Order.OrderFulfilled" class="form-control"/>
+                <span asp-validation-for="Order.OrderFulfilled" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Order.CustomerId" class="control-label mt-2  fw-bold"></label>
+
+                <select
+                    asp-for="Order.CustomerId"
+                        class="form-control"
+                    asp-items="ViewBag.CustomerId"
+                    disabled="disabled"
+                    ReadOnly="true">
+                </select>
+                <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label><strong>Name:</strong> @Model.Order.Customer.FirstName @Model.Order.Customer.LastName</label>
+            </div>
+            
+            <div class="form-group mt-2">
+                <input type="submit" value="Save" class="btn btn-primary"/> <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+            </div>
+
         </form>
+
     </div>
+
 </div>
 
 
