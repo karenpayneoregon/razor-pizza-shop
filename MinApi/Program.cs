@@ -6,7 +6,7 @@ class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        builder.Services.AddSingleton<HelloService>(new HelloService());
+        builder.Services.AddSingleton(new HelloService());
         var app = builder.Build();
         app.MapGet("/", (HttpContext _, HelloService helloService) => 
             helloService
