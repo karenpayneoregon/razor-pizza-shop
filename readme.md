@@ -36,6 +36,11 @@ The model classes are known as POCO classes (from "Plain-Old CLR Objects") becau
 
 :small_orange_diamond: See this tutorial on scaffolding pages [![](assets/Link_16x.png)](https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/page?view=aspnetcore-6.0&tabs=visual-studio)
 
+## See also
+
+Razor Pages with Entity Framework Core in ASP.NET Core - Tutorial 1 of 8 [![](assets/Link_16x.png)](https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-6.0&tabs=visual-studio)
+
+
 # Setting up the database
 
 > **Note**
