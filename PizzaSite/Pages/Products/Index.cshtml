@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.7.0/csshake.min.css" />`
 <h1>Products</h1>
 
 <p>
@@ -46,5 +46,10 @@
         </tbody>
     </table>
 
-    <a asp-page="../Index" class="btn btn-primary">Home</a>
+    @*
+        Having some fun
+    *@
+    <div style="width: 100px">
+        <a asp-page="../Index" class="btn btn-primary shake-slow">Home</a>
+    </div>
 </div>
