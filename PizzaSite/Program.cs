@@ -1,4 +1,5 @@
 using ConfigurationLibrary.Classes;
+using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using PizzaShop.Classes;

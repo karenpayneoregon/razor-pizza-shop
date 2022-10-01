@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "OedPizza": {
+    "PizzaShop": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

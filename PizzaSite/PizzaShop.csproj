@@ -36,6 +36,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
+		<!--<PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2022.3.913" />-->
 	</ItemGroup>
 
 	<ItemGroup>

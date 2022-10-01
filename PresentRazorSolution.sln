@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 		sqlScripts.md = sqlScripts.md
 		SqlServerSettingsForIIS.md = SqlServerSettingsForIIS.md
+		Telerik.md = Telerik.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinApi", "MinApi\MinApi.csproj", "{B34C027E-4190-437F-B4BF-F561BA5F2B1E}"
@@ -23,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPIs", "MiniApi1\Min
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{2FB1E52A-61CD-4D94-88CE-D5CBD795361E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoReverseEngineer", "DemoReverseEngineer\DemoReverseEngineer.csproj", "{8D1D1DBD-94C5-4FAB-97EE-A1B735E16E20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoReverseEngineer", "DemoReverseEngineer\DemoReverseEngineer.csproj", "{8D1D1DBD-94C5-4FAB-97EE-A1B735E16E20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
