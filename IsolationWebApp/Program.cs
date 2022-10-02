@@ -1,38 +1,28 @@
-using IsolationWebApp.Classes;
 
-namespace IsolationWebApp
+namespace IsolationWebApp;
+
+public partial class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
+        var builder = WebApplication.CreateBuilder(args);
+
+        builder.Services.AddRazorPages();
+        
+        var app = builder.Build();
+
+        if (!app.Environment.IsDevelopment())
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-
-            builder.Services.AddRazorPages(options =>
-            {
-                options.Conventions.Add(new CombinedPageRouteModelConvention());
-            });
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.MapRazorPages();
-
-            app.Run();
+            app.UseExceptionHandler("/Error");
+            app.UseHsts();
         }
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseAuthorization();
+        app.MapRazorPages();
+
+        app.Run();
     }
 }

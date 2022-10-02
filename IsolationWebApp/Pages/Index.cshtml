@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{lang:=en}"
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -14,28 +14,32 @@
     }
 
 </style>
+
 <div class="text-center">
     <h2 class="display-4">
         CSS Isolation
     </h2>
-
-    @*
-    https://localhost:7027/en/
-    *@
-    
     
     @{
-        var language = RouteData.Values["language"]!.ToString();
-        if (language == "en")
+
+        /*
+         * For testing we are getting lang
+         */
+
+        if (RouteData.Values.ContainsKey("lang"))
         {
-            <h6>Language is English</h6>        
-        }else if (language == "sp")
-        {
-            <h6>Language is Spanish</h6>
+            var language = RouteData.Values["lang"]!.ToString();
+            <p><kbd>@language</kbd></p>
+            
         }
         else
         {
-            <h6>Language is unknown</h6>
+            <p>?</p>
         }
     }
+    
+    <a asp-page="Index" asp-page-handler="Menu1" asp-route-id1="p01">Menu 1</a> 
+    <br />
+    <p>@Model.Result</p>
+
 </div>
