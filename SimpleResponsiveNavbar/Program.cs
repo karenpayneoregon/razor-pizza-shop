@@ -1,6 +1,4 @@
-using IsolationWebApp.Classes;
-
-namespace IsolationWebApp
+namespace SimpleResponsiveNavbar
 {
     public class Program
     {
@@ -8,11 +6,8 @@ namespace IsolationWebApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
-            builder.Services.AddRazorPages(options =>
-            {
-                options.Conventions.Add(new CombinedPageRouteModelConvention());
-            });
+            // Add services to the container.
+            builder.Services.AddRazorPages();
 
             var app = builder.Build();
 
@@ -20,6 +15,7 @@ namespace IsolationWebApp
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

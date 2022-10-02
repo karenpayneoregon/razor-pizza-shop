@@ -18,4 +18,24 @@
     <h2 class="display-4">
         CSS Isolation
     </h2>
+
+    @*
+    https://localhost:7027/en/
+    *@
+    
+    
+    @{
+        var language = RouteData.Values["language"]!.ToString();
+        if (language == "en")
+        {
+            <h6>Language is English</h6>        
+        }else if (language == "sp")
+        {
+            <h6>Language is Spanish</h6>
+        }
+        else
+        {
+            <h6>Language is unknown</h6>
+        }
+    }
 </div>

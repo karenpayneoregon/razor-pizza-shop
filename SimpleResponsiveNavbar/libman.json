@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap-icons@1.9.1",
+      "destination": "wwwroot/lib/bootstrap-icons/",
+      "files": [
+        "bootstrap-icons.svg",
+        "font/fonts/bootstrap-icons.woff",
+        "font/fonts/bootstrap-icons.woff2",
+        "font/bootstrap-icons.css",
+        "font/bootstrap-icons.json",
+        "font/bootstrap-icons.min.css",
+        "icons/house.svg",
+        "icons/speedometer.svg",
+        "icons/speedometer2.svg",
+        "icons/table.svg",
+        "icons/people.svg",
+        "icons/person-circle.svg",
+        "icons/heart.svg"
+      ]
+    }
+  ]
+}
