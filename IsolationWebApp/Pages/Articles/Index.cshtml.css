@@ -1,4 +1,12 @@
-﻿h6 {
+﻿div {
+    font-size: 1.5em;
+    padding: 20px;
+    border-width: 9px;
+    border-style: solid;
+    border-color: orange;
+}
+
+h6 {
     display: inline-block;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     padding-left: 4px;
@@ -6,7 +14,7 @@
     border-style: double;
     border-width: 2px;
     border-style: solid;
-    border-color: #00A4BD #33475B #FF7A59;
+    border-color: red;
 }
 
 .shadow {
@@ -30,7 +38,7 @@
 .spread2 {
     border: 2px solid;
     padding: 10px;
-    box-shadow: 6px 4px 8px -2px;
+    box-shadow: 12px 4px 8px -2px;
 }
 
 .colorshadow {

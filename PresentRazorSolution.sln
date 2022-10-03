@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsolationWebApp", "Isolatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Navigation", "Navigation", "{CABE1572-B550-4239-8B14-BF741AF02AD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleResponsiveNavbar", "SimpleResponsiveNavbar\SimpleResponsiveNavbar.csproj", "{2F03B819-8296-4087-9730-249AAA84C6FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleResponsiveNavbar", "SimpleResponsiveNavbar\SimpleResponsiveNavbar.csproj", "{2F03B819-8296-4087-9730-249AAA84C6FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

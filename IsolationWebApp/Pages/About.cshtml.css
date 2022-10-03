@@ -1,4 +1,13 @@
-﻿h6 {
+﻿div#Demo {
+    font-size: 1.5em;
+    padding: 20px;
+    border-width: 9px;
+    border-style: solid;
+    border-color: green;
+}
+
+
+h6 {
     display: inline-block;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     padding-left: 4px;

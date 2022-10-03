@@ -2,29 +2,26 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-#pragma warning disable CS8618
-
-namespace IsolationWebApp.Pages
+namespace IsolationWebApp.Pages.Articles
 {
     [AllowAnonymous]
-    public class AboutModel : PageModel
+    public class IndexModel : PageModel
     {
-        public readonly ILogger<AboutModel> _logger;
+        public readonly ILogger<IndexModel> _logger;
 
-        public AboutModel(ILogger<AboutModel> logger)
+        public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
-        public string? Message { get; private set; }
 
+        public string? Message { get; private set; }
         public void OnGet()
         {
             Message = "TODO";
         }
 
+
         [BindProperty(Name = "lang", SupportsGet = true)]
         public string Language { get; set; }
-
- 
     }
 }
