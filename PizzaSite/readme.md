@@ -2,7 +2,13 @@
 
 This is a basic ASP.NET Core [^1] project using Razor Pages [^2] using Entity Framework Core 6 [^3] using Microsoft SQL-Server database.
 
+# Heath Check
 
+See Program.cs, code for health check is in two regions.
+
+## Requires
+
+NuGet package `Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore`
 
 
 # Project structure
@@ -31,13 +37,6 @@ The `Pages` folder contains pages for each model [^4]. Under each folder e.g. th
 
 For this project I left some pages disconected or left out to show (if time permits) how to create a new page.
 
-# CSS
-
-CSS Isolation scopes [^5] which provides an elegant way to associate a style sheet to one page
-
-```
-{Your_namespace}.styles.css
-```
 
 # Libraries
 
@@ -182,6 +181,9 @@ public static async Task UpdateName(Customer currentCustomer)
 
 ![Database Model](assets/DatabaseModel.png)
 
+# CSS Isolation
+
+Razor Pages [CSS Isolation](https://github.com/karenpayneoregon/razor-pages-style-isolation)
 
 # Resources
 
@@ -204,4 +206,3 @@ public static async Task UpdateName(Customer currentCustomer)
 [^2]:Introduction to [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-6.0&tabs=visual-studio) in ASP.NET Core
 [^3]: Entity Framework Core 6
 [^4]: A [model](https://learn.microsoft.com/en-us/ef/core/#the-model) is made up of entity classes and a context object that represents a session with the database. 
-[^5]: CSS isolation means creating a CSS file like '.cshtml.css' for each razor page/view(.cshtml). CSS isolation helps to avoid dependencies on global styles that will be very hard to maintain and also avoid style conflicts among the nested content.

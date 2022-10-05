@@ -23,17 +23,24 @@ class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
-        builder.Services.AddDbContext<PizzaContext>(options =>
+
+
+        #region Health check
+        
+        builder.Services.AddDbContext<PizzaContext>(options => 
             options.UseSqlServer(ConfigurationHelper.ConnectionString()));
 
-        
+        builder.Services.AddHealthChecks().AddDbContextCheck<PizzaContext>(); 
+
+        #endregion
+
+
         WebApplication app = builder.Build();
         
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
 
@@ -42,7 +49,7 @@ class Program
             ForwardedHeaders = ForwardedHeaders.XForwardedFor |
                                ForwardedHeaders.XForwardedProto
         });
-
+        
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
@@ -54,6 +61,13 @@ class Program
             InitializeDatabase.Clean();
             InitializeDatabase.Populate();
         }
+
+        #region Health check 
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapHealthChecks("/health");
+        }); 
+        #endregion
 
         await app.RunAsync();
     }

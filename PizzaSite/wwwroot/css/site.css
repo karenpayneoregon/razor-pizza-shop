@@ -37,13 +37,6 @@ body {
 
 
 
-
-
-
-
-
-
-
 h1 {
     font-size: 32px;
     text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
@@ -59,3 +52,4 @@ h1 {
     margin: 16px;
     background-image: url(../lib/images/home.jpg);
 }
+
