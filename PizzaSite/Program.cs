@@ -30,7 +30,6 @@ class Program
         builder.Services.AddDbContext<PizzaContext>(options => 
             options.UseSqlServer(ConfigurationHelper.ConnectionString()));
 
-        builder.Services.AddHealthChecks().AddDbContextCheck<PizzaContext>(); 
 
         #endregion
 
@@ -62,12 +61,7 @@ class Program
             InitializeDatabase.Populate();
         }
 
-        #region Health check 
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapHealthChecks("/health");
-        }); 
-        #endregion
+
 
         await app.RunAsync();
     }
