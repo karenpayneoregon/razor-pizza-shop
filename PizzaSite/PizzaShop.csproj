@@ -9,15 +9,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="wwwroot\lib\images\pizza.png" />
+		<Content Remove="wwwroot\lib\images\pizza.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="readme.md" />
+		<None Remove="readme.md" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="readme.md" />
+		<Content Include="readme.md" />
 	</ItemGroup>
 
 
@@ -42,12 +42,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="images\" />
-	  <Folder Include="assets\" />
+		<Folder Include="images\" />
+		<Folder Include="assets\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="wwwroot\lib\images\pizza.png" />
+		<None Include="wwwroot\lib\images\pizza.png" />
 	</ItemGroup>
 
 </Project>

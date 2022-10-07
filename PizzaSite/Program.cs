@@ -24,15 +24,9 @@ class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
-
-        #region Health check
-        
+       
         builder.Services.AddDbContext<PizzaContext>(options => 
             options.UseSqlServer(ConfigurationHelper.ConnectionString()));
-
-
-        #endregion
-
 
         WebApplication app = builder.Build();
         
@@ -60,9 +54,7 @@ class Program
             InitializeDatabase.Clean();
             InitializeDatabase.Populate();
         }
-
-
-
+        
         await app.RunAsync();
     }
 }
