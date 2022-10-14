@@ -17,37 +17,25 @@
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Order.Id"/>
+            <input type="hidden" asp-for="Order.CustomerId"/>
 
-            <div class="form-group">
-                <label asp-for="Order.OrderPlaced" class="control-label"></label>
+            <div >
+                <label asp-for="Order.OrderPlaced" class="form-label"></label>
                 <input asp-for="Order.OrderPlaced" class="form-control"/>
                 <span asp-validation-for="Order.OrderPlaced" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Order.OrderFulfilled" class="control-label"></label>
+            <div >
+                <label asp-for="Order.OrderFulfilled" class="form-label"></label>
                 <input asp-for="Order.OrderFulfilled" class="form-control"/>
                 <span asp-validation-for="Order.OrderFulfilled" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Order.CustomerId" class="control-label mt-2  fw-bold"></label>
-
-                <select
-                    asp-for="Order.CustomerId"
-                        class="form-control"
-                    asp-items="ViewBag.CustomerId"
-                    disabled="disabled"
-                    ReadOnly="true">
-                </select>
-                <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mt-2">
+            <div  mt-2">
                 <label><strong>Name:</strong> @Model.Order.Customer.FirstName @Model.Order.Customer.LastName</label>
             </div>
             
-            <div class="form-group mt-2">
+            <div class=" mt-2">
                 <input type="submit" value="Save" class="btn btn-primary"/> <a asp-page="./Index" class="btn btn-primary">Back to List</a>
             </div>
 

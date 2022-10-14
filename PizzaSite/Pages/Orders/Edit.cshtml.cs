@@ -13,14 +13,13 @@ namespace PizzaShop.Pages.Orders
     public class EditModel : PageModel
     {
         private readonly PizzaContext _context;
-
         public EditModel(PizzaContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Order Order { get; set; } = default!;
+        public Order Order { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,7 +28,7 @@ namespace PizzaShop.Pages.Orders
                 return NotFound();
             }
 
-            var order = await _context.Orders.FirstOrDefaultAsync(m => m.Id == id);
+            var order = await _context.Orders.Include(x => x.Customer).FirstOrDefaultAsync(m => m.Id == id);
 
             if (order == null)
             {
@@ -38,8 +37,8 @@ namespace PizzaShop.Pages.Orders
 
             Order = order;
 
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id");
-
+            ViewData["CustomerId"] = Order.CustomerId;
+            
             return Page();
         }
 
@@ -50,8 +49,8 @@ namespace PizzaShop.Pages.Orders
                 return Page();
             }
 
+            //Order.CustomerId = _customerId;
             _context.Attach(Order).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();

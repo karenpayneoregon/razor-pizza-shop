@@ -15,7 +15,7 @@ namespace PizzaShop.Pages.Products
     {
         private readonly PizzaContext _context;
 
-        public EditModel(PizzaShop.Data.PizzaContext context)
+        public EditModel(PizzaContext context)
         {
             _context = context;
         }
