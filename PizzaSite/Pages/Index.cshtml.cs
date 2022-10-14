@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PizzaShop.Data;
-using System.Net;
+
 
 namespace PizzaShop.Pages
 {
@@ -29,6 +30,18 @@ namespace PizzaShop.Pages
             IpAddress = ipAddress;
 
             var remoteIpAddress = HttpContext.Features.Get<IHttpConnectionFeature>()?.RemoteIpAddress;
+        }
+
+        public IActionResult OnGetMyOnClick()
+        {
+            try
+            {
+                throw new Exception("Intentional");
+            }
+            catch (Exception e)
+            {
+                return RedirectToPage("Other/Bogus");
+            }
         }
     }
 }

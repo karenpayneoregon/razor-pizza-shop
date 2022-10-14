@@ -30,7 +30,6 @@
         margin: auto;
     }
 
-
 </style>
 <div class="text-center">
     <h1 class="display-4 text-black-50">
@@ -38,11 +37,41 @@
     </h1>
 </div>
 
+<div class="container">
+
+    <div>
+
+        <button type="button" class="btn btn-primary position-relative" onclick="AddProduct()">
+            Inbox
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <span id="ShowResult1" class="badge">100+</span>
+                <span class="visually-hidden">unread messages</span>
+            </span>
+        </button>
+
+        <a class="btn btn-danger ms-lg-5" asp-page-handler="MyOnClick">Intentional error</a>
+
+    </div>
+
+
+</div>
+
+<script>
+
+    var count = 100;
+
+    function AddProduct() {
+
+        count++;
+
+        $("#ShowResult1").text(count + '+');
+    }
+
+</script>
+
 @*
     Simple example for mixing C# with HTML using BootStrap
-    
     /healthchecks-ui
-
 *@
 
 
@@ -56,7 +85,7 @@
                 {
                     <li class="list-group-item d-flex justify-content-between align-items-center bg-success text-white">
                         @person.Key
-                        
+
                         @if (person.Value > 12)
                         {
                             <span class="badge bg-dark rounded-pill">@person.Value</span>

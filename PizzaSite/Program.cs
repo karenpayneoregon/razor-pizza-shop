@@ -1,4 +1,5 @@
 using ConfigurationLibrary.Classes;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,7 @@ class Program
        
         builder.Services.AddDbContext<PizzaContext>(options => 
             options.UseSqlServer(ConfigurationHelper.ConnectionString()));
-
+        
         WebApplication app = builder.Build();
         
         // Configure the HTTP request pipeline.
