@@ -39,17 +39,23 @@
 
 <div class="container">
 
-    <div>
+    <div class="row row-cols-auto">
+        
+        <div class="col">
+            <button type="button" class="btn btn-primary position-relative me-3" onclick="AddProduct()">
+                Add
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <span id="ShowResult1" class="badge">100+</span>
+                    <span class="visually-hidden">Add another product</span>
+                </span>
+            </button>
 
-        <button type="button" class="btn btn-primary position-relative" onclick="AddProduct()">
-            Inbox
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                <span id="ShowResult1" class="badge">100+</span>
-                <span class="visually-hidden">unread messages</span>
-            </span>
-        </button>
+        </div>
 
-        <a class="btn btn-danger ms-lg-5" asp-page-handler="MyOnClick">Intentional error</a>
+        <div class="col">
+            <a class="btn btn-danger ms-lg-5" asp-page-handler="MyOnClick">Intentional error</a>
+        </div>
+        
 
     </div>
 
